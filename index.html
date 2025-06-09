@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="/assets/uni.1e509e88.css">
+
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/assets/logo-1-LHT9Or-P.jpg" />
+        <script>
+            var coverSupport =
+                "CSS" in window &&
+                typeof CSS.supports === "function" &&
+                (CSS.supports("top: env(a)") ||
+                    CSS.supports("top: constant(a)"));
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                    (coverSupport ? ", viewport-fit=cover" : "") +
+                    '" />'
+            );
+        </script>
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdrkIoFXgu6mmU2rxMDQ77Lk4zs8II2AI&libraries=places&libraries=marker"></script> -->
+        <title>uni-map</title>
+        <!--preload-links-->
+        <!--app-context-->
+      <script type="module" crossorigin src="/assets/index-CK3XW3i5.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-Dc2c97Fy.css">
+    </head>
+    <script>
+        ((g) => {
+            var h,
+                a,
+                k,
+                p = "The Google Maps JavaScript API",
+                c = "google",
+                l = "importLibrary",
+                q = "__ib__",
+                m = document,
+                b = window;
+            b = b[c] || (b[c] = {});
+            var d = b.maps || (b.maps = {}),
+                r = new Set(),
+                e = new URLSearchParams(),
+                u = () =>
+                    h ||
+                    (h = new Promise(async (f, n) => {
+                        await (a = m.createElement("script"));
+                        e.set("libraries", [...r] + "");
+                        for (k in g)
+                            e.set(
+                                k.replace(
+                                    /[A-Z]/g,
+                                    (t) => "_" + t[0].toLowerCase()
+                                ),
+                                g[k]
+                            );
+                        e.set("callback", c + ".maps." + q);
+                        a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                        d[q] = f;
+                        a.onerror = () =>
+                            (h = n(Error(p + " could not load.")));
+                        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                        m.head.append(a);
+                    }));
+            d[l]
+                ? console.warn(p + " only loads once. Ignoring:", g)
+                : (d[l] = (f, ...n) =>
+                      r.add(f) && u().then(() => d[l](f, ...n)));
+        })({
+            key: "AIzaSyCdrkIoFXgu6mmU2rxMDQ77Lk4zs8II2AI",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+        google.maps.importLibrary("maps");
+        google.maps.importLibrary("marker");
+    </script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <body>
+        <div id="app"><!--app-html--></div>
+    </body>
+</html>
